@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScripit dynamic form</title>
+</head>
+<body>
+	<h1>Dynamic form Example</h1>
+	<div id="dynamic_form"></div>
+
+</body>
+<style>
+    body{
+        background-color: orange;  
+    }
+</style>
+<script>
+	var form = document.getElementById('dynamic_form');
+//First Name
+	var first_name_label = document.createElement('label');
+	first_name_label.setAttribute('id','name_label');
+	var input = document.createElement('input');
+	input.setAttribute('type','text');
+	input.setAttribute('id','first_name');
+	form.appendChild(first_name_label);
+	form.appendChild(input);
+	document.getElementById('name_label').innerHTML = "First Name";
+
+//Last Name
+	var last_name_lable = document.createElement('label');
+	last_name_lable.setAttribute('id','last_name');
+	var input_l = document.createElement('input');
+	input.setAttribute('type','text');
+	input.setAttribute('id','lastName');
+	form.appendChild(last_name_lable);
+	form.appendChild(input_l);
+	document.getElementById('last_name').innerHTML = "Last Name";
+
+	//Mobile Number
+	var mobile_no = document.createElement('label');
+	mobile_no.setAttribute('id','mobl_no');
+	var input_m = document.createElement('input');
+	input.setAttribute('type','text');
+	input.setAttribute('id','mobile_number');
+	form.appendChild(mobile_no);
+	form.appendChild(input_m);
+	document.getElementById('mobl_no').innerHTML = "Mobile Number";	
+
+	//Email id
+	var email = document.createElement('label');
+	email.setAttribute('id','email_id');
+	var input_e = document.createElement('input');
+	input.setAttribute('type','text');
+	input.setAttribute('id','email_add');
+	form.appendChild(email);
+	form.appendChild(input_e);
+	document.getElementById('email_id').innerHTML = "Email Address";
+
+	// Adhar Card Number
+	var adhar_card = document.createElement('label');
+	adhar_card.setAttribute('id','adhar_id');			
+	var input_adhar = document.createElement('input');
+	input.setAttribute('type','text');
+	input.setAttribute('id','adhar_number');
+	form.appendChild(adhar_card);
+	form.appendChild(input_adhar);
+	document.getElementById('adhar_id').innerHTML = "Adhar Card Number";
+
+	// radio button
+
+	var gender_male = document.createElement('label');
+	gender_male.setAttribute('for','male');
+	gender_male.textContent = 'Male';
+	var male_radio = document.createElement('input');
+	male_radio.setAttribute('type','radio');
+	male_radio.setAttribute('id','male');
+	male_radio.setAttribute('name','gender');
+	form.appendChild(gender_male);
+	form.appendChild(male_radio);
+
+	var gender_female = document.createElement('label');
+	gender_female.setAttribute('for','female');
+	gender_female.textContent = 'Female';
+	var female_radio = document.createElement('input');
+	female_radio.setAttribute('type','radio');
+	female_radio.setAttribute('id','female');
+	female_radio.setAttribute('name','gender');
+	form.appendChild(gender_female);
+	form.appendChild(female_radio);
+
+	var gender_other = document.createElement('label');
+	gender_other.setAttribute('for','other');
+	gender_other.textContent = 'other';
+	var other_radio = document.createElement('input');
+	other_radio.setAttribute('type','radio');
+	other_radio.setAttribute('id','other');
+	other_radio.setAttribute('name','gender');
+	form.appendChild(gender_other);
+	form.appendChild(other_radio);
+
+	// button
+	var button = document.createElement('button');
+	button.setAttribute('type','button');
+	button.setAttribute('id','button_form');
+	button.setAttribute('value','Submit');
+	form.appendChild(button);
+	document.getElementById('button_form').innerHTML = "Submit";
+
+</script>
+</html>
