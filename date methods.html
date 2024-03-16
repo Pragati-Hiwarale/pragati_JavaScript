@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Javascript Date Get Methods</title>
+</head>
+<body>
+	<h1>The Get Methods of Date</h1>
+	<h3>Get full Year Method</h3>
+	<p>In this method we are getting the current Year.</p>
+	<h2 id="getfull_year_id"></h2>
+	<span id="full_year_result"></span>
+	<br>
+
+	<h3> Get Date Methhod</h3>
+	<p>In this we will get the current date of a Day.</p>
+	<h2 id="get_date"></h2>
+	<span id="get_date_result"></span>
+	<br>
+	<br>
+
+	<h3>Get Month Method</h3>
+	<p>In this method we are getting Current Month.</p>
+	<h2 id="get_month"></h2>
+	<span id="get_month_result"></span>
+	<br>
+	<br>
+
+	<h3>Get Day </h3>
+	<p>In this we will get current day.</p>
+	<h2 id="get_day"></h2>
+	<span id="get_day_result"></span>
+	<br><br>
+
+	<h3>Get Hours Method</h3>
+	<p>Here we are getting Current hours of the day.</p>
+	<h2 id="get_hours"></h2>
+	<span id="get_hours_result"></span>
+	<br><br>
+
+	<h3>Get Minutes</h3>
+	<h2 id="get_min"></h2>
+	<span id="get_min_result"></span>
+	<br><br>
+
+	<h3>Get Seconds</h3>
+	<h2 id="get_sec"></h2>
+	<span id="get_sec_result"></span>
+	<br><br>
+
+	<h3>Get Milisecond</h3>
+	<h2 id="get_milisec"></h2>
+	<span id="mili_result"></span>
+	<br><br>
+
+	<h3>Get day</h3>
+	<h2 id="get_day_id"></h2>
+	<p>Todays Day is :</p>
+	<span id="day_result"></span>
+	<br><br>
+
+	<h3>Get Time Now</h3>
+	<p>This method returns the number of milliseconds since January 1, 1970</p>
+	<h2 id="get_time"></h2>
+	<span id="time_result"></span>
+	<br><br>
+
+	<button type="button" onclick="Get_Date_Methods()"> Click </button>
+
+</body>
+
+<script>
+	function Get_Date_Methods() {
+
+     	//Full year Method
+		const dt_yr = new Date();
+		document.getElementById('full_year_result').innerHTML=dt_yr.getFullYear();
+
+		// Get Date Method
+		const date = new Date();
+		document.getElementById('get_date_result').innerHTML=date.getDate();
+
+		//Get Month Method
+		const months =["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+		const mon = new Date();
+		let month = months[mon.getMonth()];
+		document.getElementById('get_month_result').innerHTML=month;
+
+		//Get Day Methods
+		const weeks = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+		const day = new Date();
+		document.getElementById("get_day_result").innerHTML = weeks[day.getDay()];
+
+		//Get Hours Method
+		const hr = new Date();
+		document.getElementById('get_hours_result').innerHTML=hr.getHours();
+
+		//Get Minutes
+		const mini = new Date();
+		document.getElementById('get_min_result').innerHTML=mini.getMinutes();
+
+		// Get Seconds
+		const sec = new Date();
+		document.getElementById('get_sec_result').innerHTML= sec.getSeconds();
+
+		//Get MiliSecond
+		const mili = new Date();
+		document.getElementById('mili_result').innerHTML=mili.getMilliseconds();
+
+		//Get Day
+		const day1 = new Date();
+		document.getElementById('day_result').innerHTML = day1.getDay();
+
+		//Get Time
+		const t1 = new Date();
+		document.getElementById('time_result').innerHTML = t1.getTime();
+
+	}
+</script>
+</html>
