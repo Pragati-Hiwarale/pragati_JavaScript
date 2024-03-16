@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript 3 example</title>
+</head>
+<body>
+    <h1>Examples of JS Events</h1>
+
+    <h2>SWAP DEMO</h2>
+
+    <label> First Number </label>
+    <input type="text" id="first_no">
+
+    <label> Second Number </label>
+    <input type="text" id="second_no">
+    <br> <br>
+
+    <button type="button" onclick="Swap()"> Swap </button>
+
+
+     <h2>Onchange Demo</h2>
+
+    <label> First Number </label>
+    <input type="text" id="first_no">
+
+    <label> Second Number </label>
+    <input type="text" id="second_no" onchange="Onchange_Demo()">
+    <br> <br>
+
+    <label>Result </label>
+    <input type="text" id="result" onchange="">
+
+    <button type="button" onclick="Swap()"> Swap </button>
+
+    <h2>OnKeyUp Demo</h2>
+
+    <label>Price</label>
+    <input type="text" id="price">
+
+    <label> Quantity </label>
+    <input type="text" id="qnty" onkeyup="ONKEYUP_Demo()">
+    <br> <br>
+
+    <label>Total Amount </label>
+    <input type="text" id="total_amt">
+
+    <h2>Second example</h2>
+
+    <label> Press </label>
+    <input type="text" onkeypress="OnKEY_press_Demo()">
+
+    
+
+
+    </body>
+
+        <script>
+
+            function OnKEY_press_Demo(){
+                alert("Do not press Modifier keys");
+            }
+
+            function ONKEYUP_Demo(){
+                var p1 = document.getElementById('price').value;
+                var q1 = document.getElementById('qnty').value;
+
+                document.getElementById('total_amt').value = parseInt(p1) * parseInt(q1);
+            }
+
+            function Onchange_Demo() {
+                var f_no = document.getElementById('first_no').value;
+                var s_no = document.getElementById('second_no').value;
+
+                document.getElementById('result').value = parseInt(f_no) + parseInt(s_no);
+                
+            }
+            function Swap() {
+                var temp;
+               var f1 = document.getElementById('first_no').value;
+               var s2 = document.getElementById('second_no').value;
+
+               temp = f1;
+               f1 = s2;
+               s2 = temp;
+
+               document.getElementById('first_no').value = f1;
+               document.getElementById('second_no').value=s2;
+            }
+    
+
+        </script>
+</html>
