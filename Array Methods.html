@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Js Array methods</title>
+</head>
+<body>
+	<h1>ARRAY METHODS with Existing Array</h1>
+
+	<h2>Array Length </h2>
+	<h4 id="arrL1"></h4>
+	<span id="arr_len_result"></span>
+	<br>
+	<h9>**************************************************************************************</h9>
+
+	<h2>To string Array </h2>
+	<h4 id="arr_2str"></h4>
+	<span id="arr_2str_result"></span>
+	<br>
+	<h9>************************************************************************************</h9>
+
+	<h2>Array Join </h2>
+	<h4 id="arr_join"></h4>
+	<span id="arr_join_result"></span>
+	<br>
+	<h9>***********************************************************************************</h9>
+
+	
+
+	<h2>Pop Out Array </h2>
+	<h4 id="arr_pop"></h4>
+	<span id="arr_pop_result"></span>
+	<br>
+	<h9>*********************************************************************************</h9>
+
+
+	<h2>Push Array</h2>
+	<h4 id="arr_push"></h4>
+	<span id="arr_push_result"></span>
+	<br>
+	<h9>********************************************************************************</h9>
+
+	<h2>Shift Array</h2>
+	<h4 id="arr_shift"></h4>
+	<span id="arr_shift_result"></span>
+	<br>
+	<h9>********************************************************************************</h9>
+     
+    <h2>Unshift Array </h2>
+    <h4 id="arr_unshft"></h4>
+    <span id="arr_unshft_result"></span>
+    <br><br>
+    <h9>********************************************************************************</h9>
+      
+    <h2>Array Concat</h2>
+    <h4 id="arr_conc1"></h4>
+    <h4 id="arr_conc2"></h4>
+    <h4 id="arr_conc3"></h4>
+    <span id="arr_conc_result"></span>
+    <br><br>
+    <h9>********************************************************************************</h9>
+     
+     <h2>Sort Array</h2>
+     <h4 id="arr_sort"></h4>
+     <span id="arr_sort_result"></span>
+     <br><br>
+    <h9>********************************************************************************</h9>
+     
+     <h2>Splice Array</h2>
+     <h4 id="arr_spl"></h4>
+     <span id="arr_spl_result"></span>
+     <br><br>
+     <h9>********************************************************************************</h9>
+
+     <h2>Flat Array</h2>
+     <h4 id="arr_flat"></h4>
+    <span id="arr_flat_result"></span>
+    <br><br>
+    <h9>********************************************************************************</h9>
+    
+    <h2>Array Slice</h2>
+    <h4 id="arr_slice"></h4>
+    <span id="arr_slice_result"></span>
+    <br><br>
+    <h9>********************************************************************************</h9>
+    
+    
+
+</body>
+   
+   <script>
+   	const arr=['Apple', 'Mango','Banana', 'Orange'];
+   	document.getElementById('arrL1').innerHTML = arr;
+   	document.getElementById('arr_len_result').innerHTML = arr.length;
+
+    
+    const as = ['Dog','Cat','Cow','Goat','Fish'];
+   	document.getElementById('arr_2str').innerHTML = as;
+   	document.getElementById('arr_2str_result').innerHTML =as.toString();
+
+   	const p1 = [125, 85, 96, 34, 75, 21];
+   	document.getElementById('arr_join').innerHTML=p1;
+   	document.getElementById('arr_join_result').innerHTML =p1.join(" * ");
+
+    const s1 =[784, 85, 96, 34, 75, 21];
+    document.getElementById('arr_pop').innerHTML =s1;
+    document.getElementById('arr_pop_result').innerHTML =s1.pop();
+    document.getElementById('arr_pop_result').innerHTML =s1;
+
+    const psh1 =[1, 2 , 6, 8, 9, 14, 15, 18];
+    document.getElementById('arr_push').innerHTML = psh1;
+    document.getElementById('arr_push_result').innerHTML = psh1.push(1025);
+    document.getElementById('arr_push').innerHTML =psh1;
+
+    const arr_sft = [784, 85, 96, 8, 9, 14, 15,];
+    document.getElementById('arr_shift').innerHTML=arr_sft;
+    document.getElementById('arr_shift_result').innerHTML = arr_sft.shift();
+    document.getElementById('arr_shift').innerHTML=arr_sft;
+
+    const arr_un=[48, 1, 36, 95, 34, 25];
+    document.getElementById('arr_unshft').innerHTML = arr_un;
+    document.getElementById('arr_unshft_result').innerHTML=arr_un.unshift(50123);
+    document.getElementById('arr_unshft').innerHTML = arr_un;
+
+    const a1 =['Rahul', 'Sanjay','Sumit','Manoj','Anuj'];
+    const a2 =[145, 256, 96, 25, 36, 78];
+    const a3 =['Doctor','Engineer', 'Technical', 'Lawyer'];
+    document.getElementById('arr_conc1').innerHTML = a1;
+    document.getElementById('arr_conc2').innerHTML = a2;
+    document.getElementById('arr_conc3').innerHTML = a3;
+    let a4 = a1.concat(a2,a3);
+    document.getElementById('arr_conc_result').innerHTML = a4;
+
+    let num = [551, 22, 34, 89, 229, 7,46];
+    document.getElementById('arr_sort').innerHTML = num;
+    document.getElementById('arr_sort_result').innerHTML= num.sort();
+    document.getElementById('arr_sort').innerHTML = num;
+
+    const z1 =['Tom', 'Jerry','Micale','Sandy'];
+    document.getElementById('arr_spl').innerHTML = z1;
+    document.getElementById('arr_spl_result').innerHTML=z1.splice(2,1,96,58); 
+    document.getElementById('arr_spl').innerHTML = z1;
+
+    const as1 =[[251,298],[31,254],[536,796]];
+    document.getElementById('arr_flat').innerHTML=as1;
+    document.getElementById('arr_flat_result').innerHTML=as1.flat();
+    
+    const sl1 = ["Ball","Banana", "Orange", "Lemon","Apple", "Mango"];
+    document.getElementById('arr_slice').innerHTML=sl1;
+    document.getElementById('arr_slice_result').innerHTML = sl1.slice(1);
+  </script>
+    
+</html>
+
+
+
+
+
+
