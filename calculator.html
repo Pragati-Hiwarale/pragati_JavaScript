@@ -1,0 +1,41 @@
+       
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript Demo Project1</title>
+</head>
+<body>
+     <h1>First example</h1>
+    <label>Firts number</label>
+    <input type = "text" id= "First_No">
+
+    <label>Second Number</label>
+    <input type = "text" id= "Second_no">
+    <br> <br>
+    <label> Result </label><br>
+    <input type = "text" id ="result">
+
+    <button type = "button" onclick="Submit()"> Value </button>
+
+</body>
+   
+       <script>
+           function Submit(){
+            var fno = document.getElementById('First_No').value;
+            var sno = document.getElementById('Second_no').value;
+
+            document.getElementById('result').value = parseInt(fno) + parseInt(sno);
+
+            document.getElementById('result').value = parseInt(fno) - parseInt(sno);
+
+            document.getElementById('result').value = parseInt(fno) * parseInt(sno);
+
+            document.getElementById('result').value = parseInt(fno) / parseInt(sno);
+ 
+
+           }
+       </script>
+
+</html>
