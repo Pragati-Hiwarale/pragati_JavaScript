@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Javascript class defining </title>
+</head>
+<body>
+	<h1>Class Defining Calculator</h1>
+
+	<label>First Number</label>
+	<input type="text" id="first_num">
+
+	<label>Second Number</label>
+	<input type="text" id="second_num">
+
+	<label>Thirt Number</label>
+	<input type="text" id="third_num">
+	<br>
+	<br>
+
+	<button  type="button" onclick="calculator.addition()">Addition + </button>
+	<input type="text" id="addition"><br><br>
+	<button type="button" onclick="calculator.substraction()">Substraction -</button>
+	<input type="text" id="substraction"><br><br>
+	<button type="button" onclick="calculator.multiplication()">Multiplication *</button>
+	<input type="text" id="multiplication"><br><br>
+	<button type="button" onclick="calculator.division()">Division / </button>
+	<input type="text" id="division">
+
+</body>
+<script>
+	class Calculator{
+
+		addition(){
+			var f1 = document.getElementById('first_num').value;
+			var s1 = document.getElementById('second_num').value;
+			var t1 = document.getElementById('third_num').value;
+
+			document.getElementById('addition').value= parseInt(f1)+parseInt(s1)+parseInt(t1);
+		}
+		substraction(){
+			var f2= document.getElementById('first_num').value;
+			var s2 = document.getElementById('second_num').value;
+			var t2 =document.getElementById('third_num').value;
+			document.getElementById('substraction').value = parseInt(f2)-parseInt(s2)-parseInt(t2);
+		}
+		multiplication(){
+			var f3= document.getElementById('first_num').value;
+			var s3 = document.getElementById('second_num').value;
+			var t3 =document.getElementById('third_num').value;
+			document.getElementById('multiplication').value = parseInt(f3)*parseInt(s3)*parseInt(t3);
+		}		
+		division(){
+			var f4= document.getElementById('first_num').value;
+			var s4 = document.getElementById('second_num').value;
+			var t4 =document.getElementById('third_num').value;
+			document.getElementById('division').value = parseInt(f4)/parseInt(s4)/parseInt(t4);
+		}
+	}
+	const calculator = new Calculator();
+</script>
+</html>
