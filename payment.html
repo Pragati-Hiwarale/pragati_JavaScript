@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Javascript Payment Form</title>
+</head>
+<style>
+    body{
+        background-color: lightgrey;  
+    }
+</style>
+<body>
+	<form action="">
+        <h1>Payment Form</h1>
+        <p>Required Information Followed by *</p>
+        <h2>Contact Information</h2>
+
+        <p>First Name:* <input type="text" id="first_name"></p>
+        <span id="first_result" style="color: darkred;"></span>
+
+        <p>Last Name:* <input type="text" id="last_name"></p>
+        <span id="last_result" style="color: darkred;"></span>
+        <fieldset>
+            <legend>Gender*</legend>
+            <p>
+                Male <input type="radio"name="gender" value="Gender_m" id="Gender_m"> 
+                Female <input type="radio" name="gender" value="Gender_f" id="Gender_f"> 
+                Other <input type="radio" name="gender" value="Gender_0" id="Gender_o"> 
+            </p>
+
+            <span id="gender_result" style="color: red;"></span>
+        </fieldset>
+
+        <p>Emails:* <input type="email" name="email" id="email"></p>
+        <span id="email_result" style="color: red;"></span>
+
+        <p>Mobile Number:* <input type="text" name="mobile_id" id="mobile_id"></p>
+        <span id="mobile_result" style="color: red;"></span>
+
+        <p>Address:* <textarea name="address" id="address" cols="100" rows="8" required></textarea></p>
+        <span id="add_result" style="color: red;"></span>
+
+
+        <p>Pincode:* <input type="number" name="pincode" id="pincode"></p>
+        <span id="pin_result" style="color:red;"></span>
+
+        <h2>Payment Information</h2>
+        <p>Card Type:*
+            <select name="card_type" id="card_type"required>
+                <option value="">--Select Card Type--</option>
+                <option value="visa" id="visa_card">Visa</option>
+                <option value="master" id="master_card">Master</option>
+                <option value="American Express" id="american_express_card">American Express</option>
+            </select>
+        </p>
+        <span id="card_result" style="color: red;"></span>
+
+        <p>Card Number * <input type="number" name="card_number" id="card_number"required></p>
+        <span id="card_no_result" style="color: red;"></span>
+
+        <p>Expiration Date:* <input type="date"name="exp_date"id="exp_date"required></p>
+        <span id="expr_result" style="color: red;"></span>
+
+        <p>CVV:* <input type="password" name="cvv" id="cvv_id"required></p>
+        <span id="cvv_result" style="color: red;"></span>
+        <br><br>
+        
+        <button type="button" onclick="Payment_Validation()"> Click for Payment</button>
+        
+    </form>
+</body>
+<script>
+    function Payment_Validation(){
+        var f1 = document.getElementById('first_name').value;
+        var l2 = document.getElementById('last_name').value;
+
+        var a1 = document.getElementById('address').value;
+
+        var m1 = document.getElementById('mobile_id').value;
+        var mobile_regex = /^[0-9]{10}$/;
+
+        var e1 = document.getElementById('email').value;
+        var p1 = document.getElementById('pincode').value;
+        var pincode_regex = /^[0-9]{6}$/;
+
+        var c1 = document.getElementById('card_type').value;
+        var v_card = document.getElementById('visa_card').value;
+        var m_card = document.getElementById('master_card').value;
+        var ae_card = document.getElementById('american_express_card').value;
+
+        var cn1 = document.getElementById('card_number').value;
+        var ex1 = document.getElementById('exp_date').value;
+        var cv1 = document.getElementById('cvv_id').value;
+
+        document.getElementById('first_result').innerHTML= "";  
+        document.getElementById('last_result').innerHTML= "";
+        document.getElementById('gender_result').innerHTML= "";           
+        document.getElementById('add_result').innerHTML= "";
+        document.getElementById('mobile_result').innerHTML= "";
+        document.getElementById('email_result').innerHTML= ""; 
+        document.getElementById('pin_result').innerHTML= "";  
+        document.getElementById('card_result').innerHTML= ""; 
+        document.getElementById('card_no_result').innerHTML="";
+        document.getElementById('expr_result').innerHTML= ""; 
+        document.getElementById('cvv_result').innerHTML= "";
+
+            //First Name
+        if (f1 == "") {
+            document.getElementById('first_result').innerHTML="Empty First Name!";
+        } 
+        if (f1 && !isNaN(f1)){
+            document.getElementById('first_result').innerHTML="Enter only Text!";
+        } 
+
+            //Last Name
+        if (l2 == "") {
+            document.getElementById('last_result').innerHTML="Empty Last Name!";
+        } 
+        if (l2 && !isNaN(l2)){
+            document.getElementById('last_result').innerHTML="Enter only Text!";
+        } 
+
+            //Gender
+        var selected = false;
+        if (document.getElementById('Gender_m').checked || document.getElementById('Gender_f').checked || document.getElementById('Gender_o').checked){
+            selected = true;
+        }
+        if(!selected){
+            document.getElementById('gender_result').innerHTML="Select Any one option";
+        }
+        else{
+            document.getElementById('gender_result').innerHTML="";
+        }
+
+             //Address
+        if(a1==""){
+          document.getElementById('add_result').innerHTML="Address cannot be Empty!";}
+
+             //Email
+          if(e1 ==""){
+              document.getElementById('email_result').innerHTML="Enter Email";
+          }
+
+          if (e1 &&!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e1))
+          {
+            document.getElementById('email_result').innerHTML="Email is Invalid";
+        }
+
+            //Mobile
+        if(m1 ==""){
+            document.getElementById('mobile_result').innerHTML="Empty not allowed";
+        }
+        if(m1 &&!mobile_regex.test(m1)){
+            document.getElementById('mobile_result').innerHTML="Enters 10 digit Number.";
+        }
+
+            //Pincode
+        if(p1==""){
+            document.getElementById('pin_result').innerHTML="Enter pincode";
+        } 
+        if (p1 &&!pincode_regex.test(p1)) {
+            document.getElementById('pin_result').innerHTML="Enter valid Pincode!";
+        } 
+
+            //Card type
+        if (c1 ==""){
+            document.getElementById('card_result').innerHTML = "Please Select Option";
+        }
+
+            //Card Number
+        if (cn1 ==""){
+            document.getElementById('card_no_result').innerHTML = "Please Select Option";
+        }
+        let visa_card_regex = /^4[0-9]{12}(?:[0-9]{3})?$/;
+        let master_card_regex = /^5[1-5][0-9]{14}|^(222[1-9]|22[3-9]\\d|2[3-6]\\d{2}|27[0-1]\\d|2720)[0-9]{12}$/;
+        let american_regex =/^3[47][0-9]{13}$/;
+        if (c1 == v_card){
+            if(visa_card_regex.test(cn1)==true){
+                document.getElementById('card_no_result').innerHTML="Visa card Number enter Successfully";
+            }
+            else{
+                document.getElementById('card_no_result').innerHTML="Not Visa card Number";
+            }
+        }
+        else if (c1== m_card) {
+            if (master_card_regex.test(cn1)) {
+                document.getElementById('card_no_result').innerHTML="Master Card Number Enterd Successfully";
+            }
+            else if (! master_card_regex.test(cn1)){
+                document.getElementById('card_no_result').innerHTML="Not Master Card Number";
+            }
+        }
+        if (c1==ae_card) {
+            if (american_regex.test(cn1)) {
+                document.getElementById('card_no_result').innerHTML="American Express Card Number Enterd Successfully";
+            }
+            else if (!american_regex.test(cn1)) {
+                document.getElementById('card_no_result').innerHTML="Not American Express Card Number";
+            }
+        }
+
+            //Expiry Date Of card
+        if (ex1 ==""){
+            document.getElementById('expr_result').innerHTML = "Date cannot be Empty!";
+        }
+
+            //CVV Number
+        var cvv_regex = /^[0-9]{3,4}$/;
+        if (cv1 == "") {
+            document.getElementById('cvv_result').innerHTML="Empty Not Allow!";
+        }
+        if(cvv_regex.test(cv1)== true){
+            document.getElementById('cvv_result').innerHTML="";
+        }
+        else{
+            document.getElementById('cvv_result').innerHTML="Enter Valid CVV Number";
+        }
+    }
+
+</script>
+
+</html>
