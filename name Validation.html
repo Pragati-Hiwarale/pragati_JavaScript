@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Validation Example</title>
+</head>
+<body>
+	<h1>Form Validation</h1>
+
+	<label>Name of User</label>
+	<input type="text" id="name_id">
+	<span id="name_result" style="color: red;"></span>
+
+	<label>Mobile number</label>
+	<input type="text" id="mobile_id">
+	<span id="mobile_result" style="color: red;"></span><br><br>
+	<button type="button" onclick="validation_chk()"> Submit </button>
+
+
+
+</body>
+    
+    <script>
+    	function validation_chk(){
+    		var v1 = document.getElementById('name_id').value;
+    		var m1 = document.getElementById('mobile_id').value;
+
+    		document.getElementById('name_result').innerHTML="";
+    		document.getElementById('mobile_result').innerHTML="";
+    		if(v1==""){
+    			document.getElementById('name_result').innerHTML="Only Text Allowed!";
+    		}
+    		if(v1 && !isNaN(v1)){
+    			document.getElementById("name_result").innerHTML = "Only Text Allowed!";
+    		}
+    		if(m1 && isNaN(m1)){
+    			document.getElementById('mobile_result').innerHTML = "Only Numbers Allowed!";
+    		}
+    	}
+
+    </script>
+    <style>
+    	body {
+            background-color: lightblue;
+             }
+    </style>
+
+</html>
