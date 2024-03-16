@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript 2 example</title>
+</head>
+<body>
+    <h1>Second example</h1>
+
+    <label> First Number </label>
+    <input type="text" id="first_no">
+
+    <label> Second Number </label>
+    <input type="text" id="second_no">
+    <br> <br>
+
+    <button type="button" onclick="Swap()"> Swap </button>
+
+    </body>
+
+        <script>
+            function Swap() {
+                var temp;
+               var f1 = document.getElementById('first_no').value;
+               var s2 = document.getElementById('second_no').value;
+
+               temp = f1;
+               f1 = s2;
+               s2 = temp;
+
+               document.getElementById('first_no').value = f1;
+               document.getElementById('second_no').value=s2;
+            }
+    
+
+        </script>
+</html>
