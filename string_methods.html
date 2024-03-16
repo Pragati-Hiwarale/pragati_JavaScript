@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS STRING METHODS</title>
+</head>
+<body>
+	<h1> STRING METHODS </h1><br> 
+	<h2>String Length</h2>
+	<input type="text" id="str_length">
+	<button type="button" onclick="String_length()">GET STRING LENGTH</button>
+	<br>
+	<br>
+	<label>Result  </label>
+	<span id="str_length_result"></span>
+
+	<h2>String Slice</h2>
+	<input type="text" id="str_slice">
+	<button type="button" onclick="String_slice()">String Slice</button>
+	<br>
+	<br>
+	<label>Result  </label>
+	<span id="str_slice_result"></span>
+
+	<h2>String Substring</h2>
+	<input type="text" id="str_sub_str">
+	<button type="button" onclick="String_Substring()">Substring</button>
+	<br>
+	<br>
+	<label>Result  </label>
+	<span id="str_sub_result"></span>
+
+	<h2> String Substr</h2>
+	<input type="text" id="str_substr">
+	<button type="button" onclick="Substr_String()"> Substr </button>
+	<br>
+	<br>
+	<label>Result  </label>
+	<span id="str_substr_result"></span>
+
+	<h2> Replace String Content </h2>
+	<input type="text" id="replace_string">
+	<button type="button" onclick=" String_Replace()"> Replace </button>
+	<br>
+	<br>
+	<label>Result  </label>
+	<span id="result_str"></span>
+
+	<h2> String Replace All </h2>
+	<input type="text" id="replace_str">
+   <button type="button" onclick="Replace_String()">Replace All</button>
+	<br>
+	<br>
+	<label>Result  </label>
+	<span id="str_replaceall_result"></span>
+
+	<h2> String toUpperCase</h2>
+	<label>Enter lower case </label>
+	<input type="text" id="lower_case">
+	<br> <br>
+    <button type="button" onclick="Uppercase_String()">Click me</button>   
+    <span id ="result_lower"></span>
+
+    <h2>String to Lower Case</h2>
+    <label>Enter Upper case </label>
+    <input type="text" id="str_upper">
+    <br> <br>
+    <button type="button" onclick="Lowercase_String()">Click </button>
+    <span id="result_upper"></span>
+
+    <h2>String concat </h2>
+    <label>First word</label>
+    <input type="text" id="first_word" name="">
+    <label>Second word</label>
+    <input type="text" id="second_word">
+    <br><br> 
+    <button type="button" onclick="String_concatenation()">concat me</button>
+    <span id="concat_result"></span>
+
+    <h2> String trim</h2>
+    <label>Enter Words </label>
+    <input type="text" id="str_first">
+    <button type="button" onclick="String_trim()"> Click me</button>
+    <br> <br>
+    <span id="result_trim"></span>
+
+    <h2>String CharAt </h2>
+    <input type="text" id="str_charat">
+    <button type="button" onclick="String_Charat()">Click</button>
+    <br><br>
+    <span id="str_char_result"></span>
+
+    <h2>String char Code</h2>
+    <input type="text" id="str_code">
+    <button type="button" onclick="String_code()">Click </button>
+    <br><br>
+    <span id="str_code_result"></span>
+
+    <h2>String Padding Start</h2>
+    <label>Write</label>
+    <input type="text" id="str_pad">
+    <button type="button" onclick="String_Padding_Start()">Click</button>
+    <br><br>
+    <span id="Str_pad_result"></span>
+
+    <h2>String Padding End</h2>
+    <label>Write</label>
+    <input type="text" id="str_end">
+    <button type="button" onclick="String_End_Padding()">click</button>
+    <br><br>
+    <span id="str_result_end"></span>
+
+    <h2> String split</h2>
+    <input type="text" id="str_split">
+    <button type="button" onclick="String_Split()">Click</button>
+    <br><br>
+    <span id="str_split_result"></span>
+
+
+</body>
+
+   <script>
+   	function String_length(){
+   		var str1 = document.getElementById('str_length').value;
+   		document.getElementById('str_length_result').innerHTML =str1.length;
+   	}
+
+   	function String_slice() { 
+   		var str_s1 = document.getElementById('str_slice').value;
+   		document.getElementById('str_slice_result').innerHTML=str_s1.slice(5,10);
+   	}
+
+   	function String_Substring() {
+   		var str_sub1 = document.getElementById('str_sub_str').value;
+   		document.getElementById('str_sub_result').innerHTML = str_sub1.substring(0,5);
+   	}
+   	function Substr_String(){
+   		var str_sub = document.getElementById('str_substr').value;
+   		document.getElementById('str_substr_result').innerHTML =( str_sub.substr(1,14));
+   	}
+
+   	function String_Replace(){
+   		var str_rplc = document.getElementById('replace_string').value;
+   		document.getElementById('result_str').innerHTML = str_rplc.replace(/blue/g, 'red');
+   	}
+   	function Replace_String(){
+   		var str_rplc_all = document.getElementById('replace_str').value;
+   		document.getElementById('str_replaceall_result').innerHTML = str_rplc_all.replaceAll('dog','cat');
+   	}
+
+   	function Uppercase_String() {
+   		var str_upp1 = document.getElementById('lower_case').value;
+   		document.getElementById('result_lower').innerHTML = str_upp1.toUpperCase();
+   	}
+   	function Lowercase_String(){
+   		var str_low1 = document.getElementById('str_upper').value;
+   		document.getElementById('result_upper').innerHTML = str_low1.toLowerCase();
+   	}
+   	function String_concatenation(){
+   		var f1 = document.getElementById('first_word').value
+   		var s2 = document.getElementById('second_word').value
+   		document.getElementById('concat_result').innerHTML = f1.concat(" "+s2);
+   	}
+   	function String_trim() {
+   		var first = document.getElementById('str_first').value;
+   		document.getElementById('result_trim').innerHTML= first.trim();
+   	}
+   	function String_Charat(){
+   		var str_ch = document.getElementById('str_charat').value;
+   		document.getElementById('str_char_result').innerHTML =str_ch.charAt(2);
+   	}
+   	function String_code(){
+   		var str_c1 = document.getElementById('str_code').value;
+   		document.getElementById('str_code_result').innerHTML = str_c1.charCodeAt();
+
+   	}
+   	function String_Padding_Start(){
+   		var str_pad = document.getElementById('str_pad').value;
+   		document.getElementById('Str_pad_result').innerHTML = str_pad.padStart(30,'4');
+   	}
+   	function String_End_Padding(){
+   		var str_end1 = document.getElementById('str_end').value;
+   		document.getElementById('str_result_end').innerHTML = str_end1.padEnd(30,'0');
+   	}
+   	function String_Split() {
+   		var str_splt = document.getElementById('str_split').value;
+   		document.getElementById('str_split_result').innerHTML = str_splt.split(" ");
+   	}
+
+
+   </script>
+</html>    
