@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Javascript Date Set Methods</title>
+</head>
+<body>
+	<h1>Dates Set Methods</h1>
+	<h3>Set Full Year Method</h3>
+	<span id="set_yr"></span>
+	<br>
+
+	<h3>Set Month Method</h3>
+	<span id="set_month"></span>
+	<br>
+
+	<h3>Set Date Methods</h3>
+	<span id="set_date"></span>
+	<br>
+
+	<h3>Set Hour Method</h3>
+	<span id="set_hours"></span>
+	<br>
+
+	<h3>Set Minutes Method</h3>
+	<span id="set_min"></span>
+	<br>
+
+	<h3>Set Seconds Methods</h3>
+	<span id="set_sec"></span>
+	<br>
+	<br>
+	<br>
+
+	<button type="button" onclick="Set_Method()">Click</button>
+
+</body>
+<script>
+	function Set_Method() {
+		//Set Year
+		const yr = new Date();
+		yr.setFullYear(2019);
+		document.getElementById('set_yr').innerHTML= yr;
+
+		//Set Month
+		const mon = new Date();
+		mon.setMonth(9);
+		document.getElementById('set_month').innerHTML=mon;
+
+		//set Dates
+		const dt = new Date();
+		dt.setDate(dt.getDate()+50);
+		document.getElementById('set_date').innerHTML=dt;
+
+		//set Hours
+		const hr = new Date();
+		hr.setHours(15);
+		document.getElementById('set_hours').innerHTML = hr;
+
+		//Set Minutes
+		const min = new Date();
+		min.setMinutes(40);
+		document.getElementById('set_min').innerHTML = min;
+
+		//Set Seconds
+		const sec = new Date();
+		sec.setSeconds(50);
+		document.getElementById('set_sec').innerHTML = sec;
+
+	}
+</script>
+</html>
