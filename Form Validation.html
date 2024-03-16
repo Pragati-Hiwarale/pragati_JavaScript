@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Js Validation</title>
+</head>
+<body>
+	<h1>Validation</h1>
+
+	 <h1>Sign In Form</h1>
+	 <p>Required Information Followed by *</p>
+	 <h2>Personal Information</h2>
+
+	 <p><b>First Name:</b> *<input type="text" id="first_Name" required></p>
+	 <span id="first_result" style="color: red;"></span>
+
+	 <p><b>LastName:</b> *<input type="text" id="last_name"></p>
+	 <span id="last_result" style="color: red;"></span>
+
+	 <p><b>Email Id:</b> *<input type="text" id="email_id"></p>
+	 <span id="eml_result" style="color: red;"></span>
+
+	 <p><b>Mobile Number:</b>* <input type="tel" id="mbl_no" maxlength="10"></p>
+	 <span id="mbl_result" style="color: red;"></span>
+
+	 <p><b>New Passowrd:</b>* <input type="text" id="pass"></p>
+	 <span id="new_result" style="color: red;"></span>
+	 <p><i>(1) At least one alphabetical character (uppercase or lowercase).<br>
+        (2) At least one digit.<br>
+        (3) At least one special character from @$!%*#?&.<br>
+        (4) A minimum length of 8 characters.</i></p>
+
+	 <p><b>Confirm New Passowrd:</b>* <input type="text" id="pass_com"></p>
+	 <span id="com_result" style="color: red;"></span>
+	 <br><br>
+
+	 <button type="button" onclick="Form_Submit()">Submit</button>
+
+
+
+
+</body>
+       <script>
+       	function Form_Submit() {
+       		var fN1 = document.getElementById('first_Name').value;
+       		var lN1 = document.getElementById('last_name').value;
+       		var em1 = document.getElementById('email_id').value;
+       		var mb1 = document.getElementById('mbl_no').value;
+       		var np1 = document.getElementById('pass').value;
+       		var cnp = document.getElementById('pass_com').value;
+       		var pass_regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+       		var mobile_regex = /^\+[0-9]{1,3}-?[0-9]{4,14}$/;
+
+       		document.getElementById('first_result').innerHTML="";
+       		document.getElementById('last_result').innerHTML="";
+       		document.getElementById('eml_result').innerHTML="";
+       		document.getElementById('mbl_result').innerHTML="";
+       		document.getElementById('new_result').innerHTML="";
+       		document.getElementById('com_result').innerHTML="";
+             
+             //first Name
+       		if (fN1== "") {
+       			document.getElementById('first_result').innerHTML="Name is required";
+       		}
+       		if(fN1 && !isNaN(fN1)) {
+             document.getElementById('first_result').innerHTML="Text Required only!";
+            }
+             //last Name
+       		if (lN1=="") {
+       			document.getElementById('last_result').innerHTML="Last name is required";
+       		}
+
+       		if(lN1 && !isNaN(lN1)) {
+             document.getElementById('last_result').innerHTML="Text allowed";
+            }
+
+            //Mobile 
+            if(mb1 ==""){
+            	document.getElementById('mbl_result').innerHTML="Empty not allowed";}
+            if(mb1 &&!mobile_regex.test(mb1)){
+            	document.getElementById('mbl_result').innerHTML="Enters 10 digit Number.";
+            }
+
+             //Email
+            if(em1 ==""){
+              document.getElementById('eml_result').innerHTML="Enter valid Email";
+            }
+
+             if (em1 &&!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(em1))
+            {
+            document.getElementById('eml_result').innerHTML="Email is Void";
+            }
+            //password
+            if (np1 == "") {
+            	document.getElementById('new_result').innerHTML="Empty Not allowed!";}
+            if (np1 &&!pass_regex.test(np1)) {
+            	document.getElementById('new_result').innerHTML="Enter Valid Password!";
+            }
+            if (cnp =="") {
+            	document.getElementById('com_result').innerHTML="Empty Not allowed!";
+            }
+            else if (cnp === np1) {
+            	document.getElementById('com_result').innerHTML ="Passwords Match :)";
+            }
+            else{
+            	document.getElementById('com_result').innerHTML="Not Matched :(";
+            }
+        }
+      	
+       </script>
+
+           <style>
+    	body {
+            background-color: bisque;
+             }
+    </style>
+</html>
